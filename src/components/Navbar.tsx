@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { href: "#info", label: "Info", icon: "🌙" },
+  // { href: "#info", label: "Info", icon: "🌙" },
   { href: "#rundown", label: "Jadwal", icon: "⏰" },
   { href: "#games", label: "Games", icon: "🎮" },
   // { href: "#team", label: "Panitia", icon: "👥" },
