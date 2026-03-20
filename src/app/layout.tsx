@@ -1,19 +1,19 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Family Gathering 2025 — Eid Al-Fitr',
-  description: 'Our beloved family gathering celebration — Minal Aidin Wal Faizin!',
-}
+  title: "Wagrim Family Halalbihalal 2026 — Eid Al-Fitr",
+  description: "Our beloved family celebration — Minal Aidin Wal Faizin!",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="id">
       <body>{children}</body>
     </html>
-  )
+  );
 }

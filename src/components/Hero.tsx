@@ -314,7 +314,7 @@ export default function Hero() {
         {/* Pills */}
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {[
-            { icon: "📅", text: "21 Maret 2026" },
+            { icon: "📅", text: "22 Maret 2026" },
             { icon: "📍", text: "Taman Hutan Raya Ir. H. Djuanda" },
             { icon: "🎮", text: "Fun Games" },
             { icon: "🍽️", text: "Makan Bersama" },
