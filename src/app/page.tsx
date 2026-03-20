@@ -23,11 +23,11 @@ export default function Home() {
         <main>
           <Navbar />
           <Hero />
-          <InfoSection />
+          {/* <InfoSection /> */}
           <RundownSection />
           <GamesSection />
-          <TeamSection />
-          <EquipmentSection />
+          {/* <TeamSection />
+          <EquipmentSection /> */}
           <Footer />
           <MusicPlayer
             src="/music/Maher_Zain_-_Salla_Alayka_Rahman.mp3"
