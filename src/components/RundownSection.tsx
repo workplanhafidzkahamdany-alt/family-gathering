@@ -101,7 +101,7 @@ export default function RundownSection() {
                         {item.name}
                       </span>
                       <div className="flex flex-wrap gap-1.5">
-                        {item.loc !== "—" && (
+                        {item.loc && (
                           <span className="font-['Amari'] text-xs font-bold px-2.5 py-1 rounded-full bg-[#0D4A5C]/10 text-[#0D4A5C] border border-[#0D4A5C]/20">
                             📍 {item.loc}
                           </span>
