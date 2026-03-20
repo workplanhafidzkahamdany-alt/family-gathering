@@ -11,7 +11,7 @@ export default function MusicPlayer({
   title = "Eid Nasheed",
 }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(0.6);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -32,8 +32,27 @@ export default function MusicPlayer({
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
+
     audio.volume = volume;
     audio.loop = true;
+
+    // ── autoplay on first user interaction ──
+    const tryAutoplay = () => {
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {});
+      window.removeEventListener("click", tryAutoplay);
+      window.removeEventListener("scroll", tryAutoplay);
+      window.removeEventListener("keydown", tryAutoplay);
+      window.removeEventListener("touchstart", tryAutoplay);
+    };
+
+    window.addEventListener("click", tryAutoplay, { once: true });
+    window.addEventListener("scroll", tryAutoplay, { once: true });
+    window.addEventListener("keydown", tryAutoplay, { once: true });
+    window.addEventListener("touchstart", tryAutoplay, { once: true });
+
     const onTimeUpdate = () => {
       if (audio.duration) setProgress(audio.currentTime / audio.duration);
     };
