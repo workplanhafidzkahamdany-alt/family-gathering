@@ -59,7 +59,7 @@ export default function RundownSection() {
   // dot left edge = 72 + 12 = 84px, dot centre = 84 + 16 = 100px → line at left-[100px]
 
   return (
-    <section id="rundown" className="py-24 px-6 pattern-bg">
+    <section id="rundown" className="py-24 md:px-6 pattern-bg">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <SectionHeader
           eyebrow="Jadwal Lengkap"
@@ -68,7 +68,7 @@ export default function RundownSection() {
         />
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative pr-4 md:pr-0">
           {/* Vertical line: left = time(72) + gap(12) + dot-radius(16) = 100px */}
           <div className="absolute left-[100px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C9A84C] via-[#C9A84C]/50 to-transparent pointer-events-none" />
 
@@ -83,10 +83,10 @@ export default function RundownSection() {
                 >
                   {/* Left: time + dot as a flex row, vertically centred */}
                   <div className="flex flex-row items-center gap-3 pt-3 shrink-0">
-                    <span className="font-['Cinzel_Decorative'] text-base text-[#8B6914] font-bold w-[72px] text-right leading-none">
+                    <span className="font-['Cinzel_Decorative'] text-sm md:text-base text-[#8B6914] font-bold w-[72px] text-right leading-none">
                       {item.time}
                     </span>
-                    <div className="w-8 h-8 rounded-full border-2 border-[#C9A84C] bg-[#FDF8EC] flex items-center justify-center text-sm z-10 shrink-0 shadow-[0_0_0_3px_#FDF8EC] group-hover:shadow-[0_0_0_3px_#C9A84C] transition-all duration-200">
+                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#C9A84C] bg-[#FDF8EC] flex items-center justify-center  text-xs md:text-sm z-10 shrink-0 shadow-[0_0_0_3px_#FDF8EC] group-hover:shadow-[0_0_0_3px_#C9A84C] transition-all duration-200">
                       {dotEmojis[i] || "⭐"}
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export default function RundownSection() {
                     style={{ boxShadow: "2px 2px 0 rgba(201,168,76,0.2)" }}
                   >
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                      <span className="font-['Amari'] italic font-bold text-[#1C1208] text-xl">
+                      <span className="font-['Amari'] italic font-bold text-[#1C1208] text-base md:text-xl">
                         {item.name}
                       </span>
                       <div className="flex flex-wrap gap-1.5">
@@ -117,7 +117,7 @@ export default function RundownSection() {
                       </div>
                     </div>
                     {item.pic && (
-                      <div className="font-['Amari'] text-base text-[#1C1208]/50 font-bold">
+                      <div className="font-['Amari'] text-xs md:text-base text-[#1C1208]/50 font-bold">
                         Pengisi:{" "}
                         <strong className="font-['Amari'] italic text-[#1C1208]/70">
                           {item.pic}
@@ -126,7 +126,7 @@ export default function RundownSection() {
                     )}
 
                     {item.notes && (
-                      <div className="text-base text-[#8B6914]/65 font-bold mt-1 italic">
+                      <div className="text-xs md:text-base text-[#8B6914]/65 font-bold mt-1 italic">
                         ❖ {item.notes}
                       </div>
                     )}

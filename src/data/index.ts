@@ -128,7 +128,7 @@ export const rundownData: RundownItem[] = [
     name: "Doa Bersama",
     loc: "",
     dur: "5m",
-    pic: "Bpk. Jajat",
+    pic: "Bpk. Jajat Suderajat",
     status: "pending",
     notes: "",
   },
