@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --gold-dark: #8B6914;
+  --emerald: #1A6B47;
+  --emerald-light: #2D9B6A;
+  --teal: #0D4A5C;
+  --cream: #FDF8EC;
+  --cream-dark: #F5EDD4;
+  --maroon: #7B1F2E;
+  --sand: #E8D5A3;
+  --ink: #1C1208;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Geometric ornament pattern */
+.pattern-bg {
+  background-color: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.07'%3E%3Cpath d='M40 0L50 20L40 40L30 20zM0 40L20 30L40 40L20 50zM80 40L60 30L40 40L60 50zM40 80L50 60L40 40L30 60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-dark {
+  background-color: var(--teal);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.08'%3E%3Cpath d='M40 0L50 20L40 40L30 20zM0 40L20 30L40 40L20 50zM80 40L60 30L40 40L60 50zM40 80L50 60L40 40L30 60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Gold shimmer text */
+.gold-shimmer {
+  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-light) 40%, var(--gold) 60%, var(--gold-light) 80%, var(--gold-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gold border ornament */
+.border-ornament {
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), inset 0 0 0 1px rgba(201,168,76,0.3);
+}
+
+/* Lantern animation */
+.lantern {
+  animation: lantern 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes lantern {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+.lantern:nth-child(2) { animation-delay: -1s; }
+.lantern:nth-child(3) { animation-delay: -2s; }
+
+/* Float animation */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-anim { animation: floatUp 6s ease-in-out infinite; }
+.float-anim-slow { animation: floatUp 9s ease-in-out 2s infinite; }
+
+/* Fade up on scroll */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+/* Stars twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.6); }
+}
+
+.star { animation: twinkle 2s ease-in-out infinite; }
+.star:nth-child(2) { animation-delay: 0.4s; }
+.star:nth-child(3) { animation-delay: 0.8s; }
+.star:nth-child(4) { animation-delay: 1.2s; }
+.star:nth-child(5) { animation-delay: 1.6s; }
+
+/* Arabesque ornament SVG inline */
+.ornament-top::before,
+.ornament-top::after {
+  content: '❖';
+  color: var(--gold);
+  opacity: 0.5;
+  font-size: 12px;
+  margin: 0 8px;
+}
