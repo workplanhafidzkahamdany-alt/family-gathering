@@ -11,11 +11,11 @@ export default function MusicPlayer({
   title = "Eid Nasheed",
 }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [volume, setVolume] = useState(0.6);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [muted, setMuted] = useState(false);
 
   const toggle = useCallback(() => {
