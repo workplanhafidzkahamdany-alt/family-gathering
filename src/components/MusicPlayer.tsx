@@ -4,14 +4,15 @@ import { useEffect, useRef, useState, useCallback } from "react";
 interface MusicPlayerProps {
   src: string;
   title?: string;
+  audioRef: React.RefObject<HTMLAudioElement>;
 }
 
 export default function MusicPlayer({
   src,
-  title = "Eid Nasheed",
+  title,
+  audioRef,
 }: MusicPlayerProps) {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [volume, setVolume] = useState(0.6);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -27,7 +28,7 @@ export default function MusicPlayer({
       audio.play().catch(() => {});
     }
     setPlaying(!playing);
-  }, [playing]);
+  }, [playing, audioRef]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -69,7 +70,7 @@ export default function MusicPlayer({
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
     };
-  }, [volume]);
+  }, [volume, audioRef]);
 
   const handleVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
     const v = parseFloat(e.target.value);
