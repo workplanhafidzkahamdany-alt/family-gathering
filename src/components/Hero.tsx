@@ -300,7 +300,7 @@ export default function Hero() {
         {/* Minal aidin */}
         <div className="my-6">
           <p className="font-['Amiri'] text-lg md:text-2xl text-[#E8D5A3]/80 italic">
-            Minal Aidin Wal Faizin — Mohon Maaf Lahir & Batin 🌙
+            Minal Aidin Wal Faizin <br /> Mohon Maaf Lahir & Batin 🌙
           </p>
         </div>
 
